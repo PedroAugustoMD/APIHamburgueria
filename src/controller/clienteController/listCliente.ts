@@ -6,8 +6,8 @@ export class listClienteController{
   async handle(req: Request, res: Response){
 
     try{
-      const search = new listarClientes();
-      const clientes = await search.execute();
+      const listar = new listarClientes();
+      const clientes = await listar.execute();
 
 
       return res.status(StatusCodes.OK).send({

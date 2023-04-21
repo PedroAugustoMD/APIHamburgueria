@@ -9,7 +9,11 @@ export class listClienteController{
       const listar = new listarClientes();
       const clientes = await listar.execute();
 
-
+      if (clientes === null){
+        return res.status(StatusCodes.NOT_FOUND).send({
+          error: "Não existem clientes cadastrados"
+        })
+      }
       return res.status(StatusCodes.OK).send({
        clientes,
       },);

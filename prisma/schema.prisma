@@ -16,6 +16,7 @@ model Cliente {
   email String @unique
   senha String   
   telefone  String
+  pedidos Pedido[]
 
   @@map("cliente")
 }
@@ -27,4 +28,14 @@ model Prato {
   valor  Float
   
   @@map("prato")
+}
+
+model Pedido {
+  id          Int           @id @default(autoincrement())
+  cliente    Cliente       @relation(fields: [clienteEmail], references: [email])
+  clienteEmail  String
+  data        DateTime      @default(now())
+  total Float
+
+  @@map("pedido")
 }

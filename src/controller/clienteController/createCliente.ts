@@ -15,11 +15,13 @@ export class createClienteController{
             const create = new CriandoCliente();
             //criando cliente
             const cliente = await create.execute({nome,email,senha,telefone});
+            
             return res.send({
                 cliente,
             },);
+
         }catch(err){
-            return res.status(StatusCodes.NOT_FOUND).send({error: "Falha no Registro1"})
+            return res.status(StatusCodes.NOT_FOUND).send({error: "Falha no Registro"})
         }
     }
 }

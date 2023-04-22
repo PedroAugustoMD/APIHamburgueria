@@ -13,7 +13,7 @@ datasource db {
 model Cliente {
   id String @id @unique @default(uuid())
   nome  String
-  email String    @unique
+  email String @unique
   senha String   
   telefone  String
 

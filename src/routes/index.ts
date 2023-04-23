@@ -3,6 +3,7 @@ import { Request, Response } from "express";
 import { clienteRoutes } from "./cliente.routes";
 import { pratoRoutes } from "./prato.routes";
 import { pedidoRoutes } from "./pedido.routes";
+import { autenticacaoRoutes } from "./autenticacao.routes"
 
 const routes = Router();
 
@@ -13,4 +14,6 @@ routes.use("/cliente", clienteRoutes);
 routes.use("/prato", pratoRoutes);
 //Criando rota de pedidos
 routes.use("/pedido", pedidoRoutes);
+//Criando rota de autenticação
+routes.use("/autenticacao", autenticacaoRoutes);
 export { routes };

@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import { pesquisarCliente } from "../../usecases/clientes/findCliente";
 import { atualizarCliente } from "../../usecases/clientes/updateCliente";
+import bcrypt from 'bcrypt';
+
 
 
 export class updateClienteController{
@@ -18,9 +20,9 @@ export class updateClienteController{
           error: "Cliente não encontrado"
         })
       } 
-
+      const senhaCript = await bcrypt.hash(senha, 10);
       const update = new atualizarCliente();
-      const cliente = await update.execute({nome,email,senha,telefone});
+      const cliente = await update.execute({nome,email,senhaCript,telefone});
 
       return res.send({
         cliente,

@@ -27,14 +27,14 @@ npm run dev
 ```
 3. Utilize o insomnia para simular as requisições
 
-####Cliente
+### Cliente
 * http://localhost:3000/cliente/create (POST)
 * http://localhost:3000/cliente/list (GET)
 * http://localhost:3000/cliente/find/:email (GET)
 * http://localhost:3000/cliente/delete/:email (DELETE)
 * http://localhost:3000/cliente/update/:email (PUT)
 
-##### body:
+### body:
 Para criar um cliente.
 ```json
 {
@@ -45,6 +45,7 @@ Para criar um cliente.
 }
 ```
 --
+
 Para atualizar um cliente.
 ```json
 {
@@ -53,10 +54,10 @@ Para atualizar um cliente.
     "telefone": ""
 }
 ```
-##### Autenticação:
+### Autenticação:
 * http://localhost:3000/autenticacao/login (POST)
 
-##### body:
+### body:
 
 ```json
 { 
@@ -68,7 +69,7 @@ Para atualizar um cliente.
 Ao autenticar ou criar um cliente você receberá um tolken que será passado no Header para as operações relacionadas a prato e pedido:
 Authorization = Bearer Token
 
-####Prato
+### Prato
 
 * http://localhost:3000/prato/create (POST)
 * http://localhost:3000/prato/list (GET)
@@ -76,7 +77,7 @@ Authorization = Bearer Token
 * http://localhost:3000/prato/delete/:nome (DELETE)
 * http://localhost:3000/prato/update/:nome (PUT)
 
-##### body:
+### body:
 Para criar um prato.
 ```json
 {
@@ -86,6 +87,7 @@ Para criar um prato.
 }
 ```
 --
+
 Para atualizar um prato.
 ```json
 {
@@ -97,7 +99,7 @@ Para atualizar um prato.
 Todas as operações necessitam do token no header:
 Authorization = Bearer 
 
-####Pedido
+### Pedido
 
 * http://localhost:3000/pedido/create (POST)
 * http://localhost:3000/pedido/list (GET)
@@ -105,7 +107,7 @@ Authorization = Bearer
 * http://localhost:3000/pedido/delete/:id (DELETE)
 * http://localhost:3000/pedido/update/:id (PUT)
 
-##### body:
+### body:
 Para criar e atualizar um pedido.
 ```json
 {

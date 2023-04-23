@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { AuthMiddleware } from "../middlewares/auth";
 import { createPedidoController  } from "../controller/pedidoController/createPedido";
 import { listPedidoController  } from "../controller/pedidoController/listPedido";
 import { findPedidoController  } from "../controller/pedidoController/findPedido";
@@ -12,6 +13,9 @@ const listPedido = new listPedidoController();
 const findPedido = new findPedidoController();
 const updatePedido = new updatePedidoController();
 const deletePedido = new deletePedidoController();
+
+const authMiddleware = new AuthMiddleware();
+pedidoRoutes.use(authMiddleware.execute);
 
 pedidoRoutes.post("/create", createPedido.handle);
 pedidoRoutes.get("/list", listPedido.handle);

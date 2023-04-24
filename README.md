@@ -12,7 +12,7 @@ https://github.com/PedroAugustoMD/APIHamburgueria.git
 DATABASE_URL="file:./dev.db"
 ```
 
-2. Execute os seguintes comandos para iniciar o projeto:
+3. Execute os seguintes comandos para iniciar o projeto:
 ```console
 npm install
 ```
@@ -25,7 +25,7 @@ npx prisma migrate dev
 ```console
 npm run dev
 ```
-3. Utilize o insomnia para simular as requisições
+4. Utilize o insomnia para simular as requisições
 
 ### Cliente
 * http://localhost:3000/cliente/create (POST)
